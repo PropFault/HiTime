@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/smg_pFire_test.wav-22000ff34df8a9e0f87d1bea5c073c57.sample"
+
+[deps]
+
+source_file="res://assets/audio/sfx/smg_pFire_test.wav"
+dest_files=[ "res://.import/smg_pFire_test.wav-22000ff34df8a9e0f87d1bea5c073c57.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -1,0 +1,108 @@
+[gd_resource type="AnimationNodeStateMachine" load_steps=24 format=2]
+
+[sub_resource type="AnimationNodeAnimation" id=1]
+animation = "idle"
+
+[sub_resource type="AnimationNodeAnimation" id=2]
+animation = "weapon_draw"
+
+[sub_resource type="AnimationNodeAnimation" id=3]
+animation = "weapon_fire1"
+
+[sub_resource type="AnimationNodeAnimation" id=4]
+animation = "weapon_fire1_reset"
+
+[sub_resource type="AnimationNodeAnimation" id=18]
+animation = "weapon_fire_hold"
+
+[sub_resource type="AnimationNodeAnimation" id=21]
+animation = "weapon_reload_end"
+
+[sub_resource type="AnimationNodeAnimation" id=11]
+animation = "weapon_reload_end"
+
+[sub_resource type="AnimationNodeAnimation" id=12]
+animation = "weapon_reload_loop"
+
+[sub_resource type="AnimationNodeAnimation" id=13]
+animation = "weapon_reload_start"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=6]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=7]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=8]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=10]
+advance_condition = "pFire"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=14]
+switch_mode = 2
+auto_advance = true
+xfade_time = 0.5
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=15]
+switch_mode = 2
+auto_advance = true
+xfade_time = 0.05
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=16]
+switch_mode = 2
+advance_condition = "GunFull"
+xfade_time = 0.2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=17]
+advance_condition = "Rel"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=19]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=20]
+switch_mode = 2
+advance_condition = "gunEmpty"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=22]
+switch_mode = 2
+advance_condition = "reloadCanceled"
+xfade_time = 0.2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=23]
+switch_mode = 2
+auto_advance = true
+xfade_time = 0.5
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=24]
+advance_condition = "pFire"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=25]
+advance_condition = "pFire"
+
+[resource]
+states/idle/node = SubResource( 1 )
+states/idle/position = Vector2( 295, 58 )
+states/weapon_draw/node = SubResource( 2 )
+states/weapon_draw/position = Vector2( 78, 58 )
+states/weapon_fire1/node = SubResource( 3 )
+states/weapon_fire1/position = Vector2( 610, 58 )
+states/weapon_fire1_reset/node = SubResource( 4 )
+states/weapon_fire1_reset/position = Vector2( 617, 150 )
+states/weapon_fire_hold/node = SubResource( 18 )
+states/weapon_fire_hold/position = Vector2( 543, -25 )
+states/weapon_reload_end/node = SubResource( 11 )
+states/weapon_reload_end/position = Vector2( 85, 167 )
+"states/weapon_reload_end 2/node" = SubResource( 21 )
+"states/weapon_reload_end 2/position" = Vector2( -180, 157 )
+states/weapon_reload_loop/node = SubResource( 12 )
+states/weapon_reload_loop/position = Vector2( 222, 271 )
+states/weapon_reload_start/node = SubResource( 13 )
+states/weapon_reload_start/position = Vector2( 401, 167 )
+transitions = [ "weapon_draw", "idle", SubResource( 6 ), "weapon_fire1", "weapon_fire1_reset", SubResource( 7 ), "weapon_fire1_reset", "idle", SubResource( 8 ), "idle", "weapon_fire1", SubResource( 10 ), "weapon_reload_end", "idle", SubResource( 14 ), "weapon_reload_start", "weapon_reload_loop", SubResource( 15 ), "weapon_reload_loop", "weapon_reload_end", SubResource( 16 ), "idle", "weapon_reload_start", SubResource( 17 ), "weapon_fire_hold", "idle", SubResource( 19 ), "weapon_fire1", "weapon_fire_hold", SubResource( 20 ), "weapon_reload_loop", "weapon_reload_end 2", SubResource( 22 ), "weapon_reload_end 2", "idle", SubResource( 23 ), "weapon_reload_end", "weapon_fire1", SubResource( 24 ), "weapon_reload_end 2", "weapon_fire1", SubResource( 25 ) ]
+start_node = "weapon_draw"
+graph_offset = Vector2( -196, -15 )

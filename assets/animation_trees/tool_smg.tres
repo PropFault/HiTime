@@ -1,0 +1,44 @@
+[gd_resource type="AnimationNodeStateMachine" load_steps=10 format=2]
+
+[sub_resource type="AnimationNodeAnimation" id=1]
+animation = "idle"
+
+[sub_resource type="AnimationNodeAnimation" id=2]
+animation = "weapon_draw"
+
+[sub_resource type="AnimationNodeAnimation" id=3]
+animation = "weapon_fire1"
+
+[sub_resource type="AnimationNodeAnimation" id=4]
+animation = "weapon_reload"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=5]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=6]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=7]
+switch_mode = 2
+auto_advance = true
+xfade_time = 0.05
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=8]
+advance_condition = "Rel"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=9]
+advance_condition = "pFire"
+
+[resource]
+states/idle/node = SubResource( 1 )
+states/idle/position = Vector2( 323, 70 )
+states/weapon_draw/node = SubResource( 2 )
+states/weapon_draw/position = Vector2( 127, 65 )
+states/weapon_fire1/node = SubResource( 3 )
+states/weapon_fire1/position = Vector2( 587, 65 )
+states/weapon_reload/node = SubResource( 4 )
+states/weapon_reload/position = Vector2( 323, 159 )
+transitions = [ "weapon_draw", "idle", SubResource( 5 ), "weapon_reload", "idle", SubResource( 6 ), "weapon_fire1", "idle", SubResource( 7 ), "idle", "weapon_reload", SubResource( 8 ), "idle", "weapon_fire1", SubResource( 9 ) ]
+start_node = "weapon_draw"

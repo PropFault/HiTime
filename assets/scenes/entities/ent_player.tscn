@@ -1,0 +1,83 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://assets/scripts/ToolMgr.gd" type="Script" id=1]
+[ext_resource path="res://assets/scripts/ent_player/ent_player.gd" type="Script" id=2]
+[ext_resource path="res://assets/scripts/ent_player/states/IdleState.gd" type="Script" id=3]
+[ext_resource path="res://assets/scripts/ent_player/states/MoveState.gd" type="Script" id=4]
+[ext_resource path="res://assets/scripts/StateManager.gd" type="Script" id=5]
+[ext_resource path="res://assets/scripts/ent_player/FPCamera.gd" type="Script" id=6]
+
+[sub_resource type="CapsuleShape" id=1]
+height = 1.80005
+
+[sub_resource type="CapsuleMesh" id=2]
+mid_height = 2.0
+
+[node name="ent_player" type="KinematicBody"]
+script = ExtResource( 2 )
+gravity = Vector3( 0, -9.81, 0 )
+_stateManager = NodePath("StateManager")
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 1.90539, 0 )
+shape = SubResource( 1 )
+
+[node name="IdleState" type="Node" parent="."]
+script = ExtResource( 3 )
+stateIdentifier = "idle"
+_stateManager = NodePath("../StateManager")
+_player = NodePath("..")
+_inventory = NodePath("../inventory")
+_toolMgr = NodePath("../Camera/ToolMgr")
+stateMove = "move"
+
+[node name="MoveState" type="Node" parent="."]
+script = ExtResource( 4 )
+stateIdentifier = "move"
+_stateManager = NodePath("../StateManager")
+_player = NodePath("..")
+_inventory = NodePath("../inventory")
+_toolMgr = NodePath("../Camera/ToolMgr")
+friction = 0.98
+actionL = "plr_moveL"
+actionR = "plr_moveR"
+actionF = "plr_moveF"
+actionB = "plr_moveB"
+actionJump = "plr_jump"
+movementLRSpeed = 50.0
+movementFBSpeed = 50.0
+jumpStrength = 40.0
+stateIdle = "idle"
+
+[node name="StateManager" type="Node" parent="."]
+script = ExtResource( 5 )
+stateRegister = {
+"idle": NodePath("../IdleState"),
+"move": NodePath("../MoveState")
+}
+defaultState = "idle"
+
+[node name="inventory" type="Node" parent="."]
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 2, 0 )
+visible = false
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.318, 0 )
+current = true
+script = ExtResource( 6 )
+_body = NodePath("..")
+
+[node name="ToolMgr" type="Spatial" parent="Camera"]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, -1.553, 0.142 )
+script = ExtResource( 1 )
+
+[node name="RayCast" type="RayCast" parent="Camera"]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0 )
+enabled = true
+collide_with_areas = true
+[connection signal="velocityChanged" from="." to="IdleState" method="sigVelocityChanged"]
+[connection signal="velocityChanged" from="." to="MoveState" method="sigVelocityChanged"]
