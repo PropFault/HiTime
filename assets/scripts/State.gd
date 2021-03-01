@@ -3,8 +3,9 @@ class_name State
 export(String)var stateIdentifier;
 export(NodePath)var _stateManager;
 onready var stateManager = get_node(_stateManager);
+var stateEnabled = false
 func onStateEnabled():
-	pass
+	stateEnabled = true
 
 func onStateDisabled():
-	pass
+	stateEnabled = false

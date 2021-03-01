@@ -1,16 +1,21 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://assets/files/viewmodels/smg/tool_smg.gltf" type="PackedScene" id=1]
-[ext_resource path="res://assets/scripts/weaponHitscan.gd" type="Script" id=2]
+[ext_resource path="res://assets/scripts/tool/weapons/states/WepInitState.gd" type="Script" id=2]
 [ext_resource path="res://assets/animation_trees/tool_smg.tres" type="AnimationNodeStateMachine" id=3]
 [ext_resource path="res://assets/scenes/debug_ball.tscn" type="PackedScene" id=4]
-[ext_resource path="res://assets/spray_patterns/test_pattern3.png" type="Texture" id=5]
-[ext_resource path="res://assets/audio/sfx/smg_pFire_test.wav" type="AudioStream" id=6]
+[ext_resource path="res://assets/scripts/tool/weapons/states/WepIdleState.gd" type="Script" id=5]
+[ext_resource path="res://assets/scripts/tool/weapons/AmmoManager.gd" type="Script" id=6]
+[ext_resource path="res://assets/scripts/StateManager.gd" type="Script" id=7]
+[ext_resource path="res://assets/scripts/tool/Tool.gd" type="Script" id=8]
+[ext_resource path="res://assets/spray_patterns/test_pattern.png" type="Texture" id=9]
+[ext_resource path="res://assets/scripts/tool/weapons/states/WepFireHitscanState.gd" type="Script" id=10]
+[ext_resource path="res://assets/scripts/tool/weapons/states/WepReloadClipState.gd" type="Script" id=11]
 
 [sub_resource type="AnimationNodeTimeScale" id=1]
 
 [sub_resource type="AnimationNodeBlendTree" id=2]
-graph_offset = Vector2( -244, 110 )
+graph_offset = Vector2( -167, 134 )
 nodes/AnimationNodeStateMachine/node = ExtResource( 3 )
 nodes/AnimationNodeStateMachine/position = Vector2( -160, 120 )
 nodes/TimeScale/node = SubResource( 1 )
@@ -20,18 +25,7 @@ node_connections = [ "output", 0, "TimeScale", "TimeScale", 0, "AnimationNodeSta
 [sub_resource type="AnimationNodeStateMachinePlayback" id=3]
 
 [node name="tool_smg" instance=ExtResource( 1 )]
-script = ExtResource( 2 )
-primaryRPS = 999.0
-primaryFirePattern = ExtResource( 5 )
-primaryAmmoClip = 999999999
-primaryClipSize = 999999999
-_animationTree = NodePath("AnimationTree")
-animationPropertyReload = "parameters/AnimationNodeStateMachine/conditions/Rel"
-animationPropertyFire = "parameters/AnimationNodeStateMachine/conditions/pFire"
-animationPropertyTimeScale = "parameters/TimeScale/scale"
-fireAnimLength = 0.083
-debug = ExtResource( 4 )
-pFireEffect = ExtResource( 6 )
+script = ExtResource( 8 )
 
 [node name="shoulderL" parent="metarig" index="0"]
 transform = Transform( -0.792184, 0.331569, 0.512354, 0.163128, -0.693943, 0.701307, 0.588076, 0.639144, 0.495643, 0.0777545, 1.6051, -0.2397 )
@@ -209,3 +203,63 @@ parameters/AnimationNodeStateMachine/playback = SubResource( 3 )
 parameters/AnimationNodeStateMachine/conditions/Rel = false
 parameters/AnimationNodeStateMachine/conditions/pFire = false
 parameters/TimeScale/scale = 1.0
+
+[node name="StateManager" type="Node" parent="." index="3"]
+script = ExtResource( 7 )
+stateRegister = {
+"Fire": NodePath("../WepFireHitscanState"),
+"Idle": NodePath("../WepIdleState"),
+"Init": NodePath("../WepInitState"),
+"Reload": NodePath("../WepReloadClipState")
+}
+defaultState = "Init"
+
+[node name="WepInitState" type="Node" parent="." index="4"]
+script = ExtResource( 2 )
+stateIdentifier = "Init"
+_stateManager = NodePath("../StateManager")
+_animationTree = NodePath("../AnimationTree")
+_owningTool = NodePath("..")
+_ammoManager = NodePath("../AmmoManager")
+idleState = "Idle"
+
+[node name="WepIdleState" type="Node" parent="." index="5"]
+script = ExtResource( 5 )
+stateIdentifier = "Idle"
+_stateManager = NodePath("../StateManager")
+_animationTree = NodePath("../AnimationTree")
+_owningTool = NodePath("..")
+_ammoManager = NodePath("../AmmoManager")
+pFireState = "Fire"
+reloadState = "Reload"
+
+[node name="AmmoManager" type="Node" parent="." index="6"]
+script = ExtResource( 6 )
+rCapacity = 30
+rLoaded = 30
+rStashed = 999999999999999
+
+[node name="WepFireHitscanState" type="Node" parent="." index="7"]
+script = ExtResource( 10 )
+stateIdentifier = "Fire"
+_stateManager = NodePath("../StateManager")
+_animationTree = NodePath("../AnimationTree")
+_owningTool = NodePath("..")
+_ammoManager = NodePath("../AmmoManager")
+primaryFirePattern = ExtResource( 9 )
+idleState = "Idle"
+fullAuto = true
+RPS = 30.0
+animPropFirePrimary = "parameters/AnimationNodeStateMachine/conditions/pFire"
+debug = ExtResource( 4 )
+hitscanRange = 400.0
+
+[node name="WepReloadClipState" type="Node" parent="." index="8"]
+script = ExtResource( 11 )
+stateIdentifier = "Reload"
+_stateManager = NodePath("../StateManager")
+_animationTree = NodePath("../AnimationTree")
+_owningTool = NodePath("..")
+_ammoManager = NodePath("../AmmoManager")
+reloadAnimProperty = "parameters/AnimationNodeStateMachine/conditions/Rel"
+idleState = "Idle"

@@ -9,6 +9,11 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Node",
+"class": "AmmoManager",
+"language": "GDScript",
+"path": "res://assets/scripts/tool/weapons/AmmoManager.gd"
+}, {
 "base": "KinematicBody",
 "class": "EntPlayer",
 "language": "GDScript",
@@ -18,6 +23,11 @@ _global_script_classes=[ {
 "class": "IdleState",
 "language": "GDScript",
 "path": "res://assets/scripts/ent_player/states/IdleState.gd"
+}, {
+"base": "Node",
+"class": "Inventory",
+"language": "GDScript",
+"path": "res://assets/scripts/ent_player/Inventory.gd"
 }, {
 "base": "PlayerState",
 "class": "MoveState",
@@ -42,22 +52,66 @@ _global_script_classes=[ {
 "base": "Spatial",
 "class": "ToolMgr",
 "language": "GDScript",
-"path": "res://assets/scripts/ToolMgr.gd"
+"path": "res://assets/scripts/tool/ToolMgr.gd"
+}, {
+"base": "State",
+"class": "ToolState",
+"language": "GDScript",
+"path": "res://assets/scripts/tool/ToolState.gd"
 }, {
 "base": "Spatial",
 "class": "WeaponHitscan",
 "language": "GDScript",
-"path": "res://assets/scripts/weaponHitscan.gd"
+"path": "res://assets/scripts/tool/weaponHitscan.gd"
+}, {
+"base": "ToolState",
+"class": "WeaponState",
+"language": "GDScript",
+"path": "res://assets/scripts/tool/weapons/WeaponState.gd"
+}, {
+"base": "WepFireState",
+"class": "WepFireHitscanState",
+"language": "GDScript",
+"path": "res://assets/scripts/tool/weapons/states/WepFireHitscanState.gd"
+}, {
+"base": "WeaponState",
+"class": "WepFireState",
+"language": "GDScript",
+"path": "res://assets/scripts/tool/weapons/states/WepFireState.gd"
+}, {
+"base": "WeaponState",
+"class": "WepIdleState",
+"language": "GDScript",
+"path": "res://assets/scripts/tool/weapons/states/WepIdleState.gd"
+}, {
+"base": "WeaponState",
+"class": "WepInitState",
+"language": "GDScript",
+"path": "res://assets/scripts/tool/weapons/states/WepInitState.gd"
+}, {
+"base": "WeaponState",
+"class": "WepReloadClipState",
+"language": "GDScript",
+"path": "res://assets/scripts/tool/weapons/states/WepReloadClipState.gd"
 } ]
 _global_script_class_icons={
+"AmmoManager": "",
 "EntPlayer": "",
 "IdleState": "",
+"Inventory": "",
 "MoveState": "",
 "PlayerState": "",
 "State": "",
 "StateManager": "",
 "ToolMgr": "",
-"WeaponHitscan": ""
+"ToolState": "",
+"WeaponHitscan": "",
+"WeaponState": "",
+"WepFireHitscanState": "",
+"WepFireState": "",
+"WepIdleState": "",
+"WepInitState": "",
+"WepReloadClipState": ""
 }
 
 [application]
