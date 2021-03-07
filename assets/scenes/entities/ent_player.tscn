@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://assets/scripts/tool/ToolMgr.gd" type="Script" id=1]
 [ext_resource path="res://assets/scripts/ent_player/ent_player.gd" type="Script" id=2]
@@ -9,6 +9,8 @@
 [ext_resource path="res://assets/scripts/ent_player/Inventory.gd" type="Script" id=7]
 [ext_resource path="res://assets/scenes/viewmodels/tool_smg.tscn" type="PackedScene" id=8]
 [ext_resource path="res://assets/scenes/entities/EquipmentMgr.gd" type="Script" id=9]
+[ext_resource path="res://assets/scripts/game_state/HitscanRaycast.gd" type="Script" id=10]
+
 
 [sub_resource type="CapsuleShape" id=1]
 height = 1.80005
@@ -17,6 +19,7 @@ height = 1.80005
 mid_height = 2.0
 
 [node name="ent_player" type="KinematicBody"]
+collision_layer = 2
 script = ExtResource( 2 )
 gravity = Vector3( 0, -9.81, 0 )
 _stateManager = NodePath("StateManager")
@@ -33,6 +36,13 @@ _player = NodePath("..")
 _inventory = NodePath("../inventory")
 _toolMgr = NodePath("../Camera/ToolMgr")
 stateMove = "move"
+stateRun = "run"
+actionL = "plr_moveL"
+actionR = "plr_moveR"
+actionF = "plr_moveF"
+actionB = "plr_moveB"
+actionRun = "plr_run"
+actionJump = "plr_jump"
 
 [node name="MoveState" type="Node" parent="."]
 script = ExtResource( 4 )
@@ -52,11 +62,30 @@ movementFBSpeed = 50.0
 jumpStrength = 40.0
 stateIdle = "idle"
 
+[node name="RunState" type="Node" parent="."]
+script = ExtResource( 4 )
+stateIdentifier = "run"
+_stateManager = NodePath("../StateManager")
+_player = NodePath("..")
+_inventory = NodePath("../inventory")
+_toolMgr = NodePath("../Camera/ToolMgr")
+friction = 0.98
+actionL = "plr_moveL"
+actionR = "plr_moveR"
+actionF = "plr_moveF"
+actionB = "plr_moveB"
+actionJump = "plr_jump"
+movementLRSpeed = 150.0
+movementFBSpeed = 150.0
+jumpStrength = 20.0
+stateIdle = "idle"
+
 [node name="StateManager" type="Node" parent="."]
 script = ExtResource( 5 )
 stateRegister = {
 "idle": NodePath("../IdleState"),
-"move": NodePath("../MoveState")
+"move": NodePath("../MoveState"),
+"run": NodePath("../RunState")
 }
 defaultState = "idle"
 
@@ -84,11 +113,10 @@ transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, -1.5
 script = ExtResource( 1 )
 
 [node name="tool_smg" parent="Camera/ToolMgr" instance=ExtResource( 8 )]
-_raycast = NodePath("../../RayCast")
+_raycast = NodePath("../../HitscanRaycast")
 
-[node name="RayCast" type="RayCast" parent="Camera"]
+[node name="HitscanRaycast" type="RayCast" parent="Camera"]
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0 )
 enabled = true
-collide_with_areas = true
-[connection signal="velocityChanged" from="." to="IdleState" method="sigVelocityChanged"]
+script = ExtResource( 10 )
 [connection signal="velocityChanged" from="." to="MoveState" method="sigVelocityChanged"]

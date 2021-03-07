@@ -1,0 +1,100 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://assets/scripts/debug/StateMachinesDebugger.gd" type="Script" id=2]
+[ext_resource path="res://assets/scenes/entities/w_vending_machine.tscn" type="PackedScene" id=3]
+
+[sub_resource type="BoxShape" id=1]
+
+[sub_resource type="CubeMesh" id=2]
+
+[sub_resource type="OpenSimplexNoise" id=3]
+seed = 169
+period = 6.9
+
+[sub_resource type="NoiseTexture" id=4]
+width = 1000
+height = 1000
+seamless = true
+noise = SubResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=5]
+albedo_texture = SubResource( 4 )
+
+[sub_resource type="BoxShape" id=6]
+extents = Vector3( 1, 15.3651, 96.3737 )
+
+[sub_resource type="CubeMesh" id=7]
+
+[node name="Spatial" type="Spatial"]
+
+[node name="StaticBody" type="StaticBody" parent="."]
+transform = Transform( 97.1508, 0, 0, 0, 3.40675, 0, 0, 0, 97.1508, 0, -3.38004, 0 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape" type="CollisionShape" parent="StaticBody"]
+shape = SubResource( 1 )
+
+[node name="MeshInstance" type="MeshInstance" parent="StaticBody"]
+mesh = SubResource( 2 )
+material/0 = SubResource( 5 )
+
+[node name="Area" type="Area" parent="."]
+transform = Transform( 2.98023e-08, 0, 1, 0, 1, 0, -1, 0, 2.98023e-08, 19.1814, 0, -14.5378 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Area"]
+shape = SubResource( 6 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Area"]
+transform = Transform( 1, 0, 4.8538e-06, 0, 21.565, 0, 4.8538e-06, 0, 163.866, 0, 0, 0 )
+mesh = SubResource( 7 )
+material/0 = null
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_right = 581.0
+margin_bottom = 309.0
+text = "bruh"
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="w_vending_machine" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.2826, 18.0858, 0 )
+
+[node name="w_vending_machine2" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.765247, 0.643736, 0, -0.643736, 0.765247, 0, 0, 0, 1, -8.06535, 17.9757, 3.56 )
+
+[node name="w_vending_machine3" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.830722, 0.556687, 0, -0.556687, 0.830722, 0, 0, 0, 1, -5.49535, 19.8578, 1.41055 )
+
+[node name="w_vending_machine4" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.68979, 20.1662, 7.98657 )
+
+[node name="w_vending_machine5" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.595432, 0.145371, -0.790144, -0.237177, 0.971466, 0, 0.767599, 0.187404, 0.612921, 2.95969, 30.622, 9.76285 )
+
+[node name="w_vending_machine6" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.548643, 0.836056, 0, -0.836056, 0.548643, 0, 0, 0, 1, -9.47107, 23.1004, 3.69045 )
+
+[node name="w_vending_machine7" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.53229, 23.896, 8.7631 )
+
+[node name="w_vending_machine8" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.765247, 0.643736, 0, -0.643736, 0.765247, 0, 0, 0, 1, -8.06535, 26.5957, 5.31658 )
+
+[node name="w_vending_machine9" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.830722, 0.556687, 0, -0.556687, 0.830722, 0, 0, 0, 1, -5.49535, 28.4778, 3.16713 )
+
+[node name="w_vending_machine10" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.68979, 28.7862, 9.74315 )
+
+[node name="w_vending_machine11" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.595432, 0.145371, -0.790144, -0.237177, 0.971466, 0, 0.767599, 0.187404, 0.612921, 2.95969, 39.2421, 11.5194 )
+
+[node name="w_vending_machine12" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.548643, 0.836056, 0, -0.836056, 0.548643, 0, 0, 0, 1, -9.47107, 31.7204, 5.44703 )
+
+[node name="w_vending_machine13" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.53229, 32.516, 10.5197 )

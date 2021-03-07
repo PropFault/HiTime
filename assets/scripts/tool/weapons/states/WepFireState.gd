@@ -2,14 +2,16 @@ extends WeaponState
 class_name WepFireState
 export(Texture)var primaryFirePattern
 export(String) var idleState;
+export(String)var animSpeedProperty;
+export(float)var fireAnimLength;
 export(bool) var fullAuto = false;
 export(float)var RPS = 10
 export(String)var animPropFirePrimary
 export(float)var spread = 0.3
 var firePattern:Dictionary
 var firePatternIndex = 0
-var timer:float = 999
-
+var finished = true
+var timer = 9999
 func _ready():
 	generateFirePattern()
 
@@ -18,26 +20,36 @@ func onStateEnabled():
 	self.fire()
 	
 func fire():
+	timer = 0
+	print("FIRE CALLED")
 	if self.ammoManager.canSpendBullets():
+		self.animationTree[animSpeedProperty] = RPS*fireAnimLength
 		self.animationTree[animPropFirePrimary]=true
+		finished = false
+		self.ammoManager.spendBullets()
 		self._fireProjectile((Vector3(firePattern.values()[firePatternIndex].x*spread,firePattern.values()[firePatternIndex].y*spread,1)).normalized())
 		firePatternIndex = (firePatternIndex+1) % firePattern.size()
-		timer = 0
+	else:
+		self.stateManager.changeState(idleState)
 func _process(delta):
 	if self.stateEnabled:
-		if timer > (1/RPS):
-			fire()
+		if (not Input.is_action_pressed("pFire")) and finished:
+			self.stateManager.changeState(idleState)
+		else:
+			if finished and timer >= 1/RPS:
+				fire()
 		timer += delta
-
+	
 func _fireProjectile(var direction):
 	pass
 func fireAnimationFinished():
-	self.ammoManager.spendBullets()
+	print("FINISH CALLED")
+	finished=true
+
+
 	self.animationTree[animPropFirePrimary]=false
 	if not (fullAuto and Input.is_action_pressed("pFire")):
 		self.stateManager.changeState(idleState)
-		timer = 999
-		firePatternIndex = 0
 
 func generateFirePattern():
 	firePattern.clear()
@@ -57,3 +69,10 @@ func generateFirePattern():
 	sortHelper.sort();
 	for elem in sortHelper:
 		firePattern[elem] = tempDic[elem];
+func onStateDisabled():
+	.onStateDisabled()
+	finished = true
+	if fullAuto:
+		firePatternIndex = 0
+	timer = 999
+	self.animationTree[animSpeedProperty] = 1

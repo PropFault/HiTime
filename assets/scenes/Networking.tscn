@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/scripts/net/GameInfo.gd" type="Script" id=1]
+[ext_resource path="res://assets/scripts/net/Networking.gd" type="Script" id=2]
+
+[sub_resource type="Resource" id=1]
+script = ExtResource( 1 )
+gamemodeName = "Test"
+currentMap = "test_scene01"
+
+[node name="Networking" type="Node"]
+script = ExtResource( 2 )
+gameInfo = SubResource( 1 )
