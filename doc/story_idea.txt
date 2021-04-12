@@ -1,0 +1,52 @@
+IDEA:
+story states: day start - level - day end
+story states repeated per day/level
+
+player works at convinience store
+player has phone.
+phone allows player to save, listen to mailbox messages and receive calls
+boss sometimes calls player once a day for special tasks.
+
+day start:
+player walks from home to convinience store
+player does some general daily tasks (restocking shelves mostly)
+there never are any customers in the building (no budget\too lazy\unskilled at modelling people lmao also storybeat)
+boss calls player to do something or player does something special (falling asleep, riding an elevator, basically any scripted event) -> flash transition to level
+
+level:
+player is now robot 
+player has now weapons (starter weapon may differ based on day)
+player loses phone (no option to save while in level)
+player completes level by interacting with a special object -> flash transition to day end
+
+
+day end:
+player has now finished special task ordered by boss or has completed the day in another way.
+player is now person
+player has phone
+player loses weaponry
+player can now: check out and walk back to house (going to bed ends day), save using phone, listen to any messages that may be on the phone.
+
+Note: transitions are always smooth with the action of the player mimicking the action taken when the level stage is activated (action of opening a door is smooth despite stage around player changing or level ends by player typing on keypad -> flash will transition to player typing in a code on a safe in the convinience store)
+
+
+
+
+
+
+stage 1 idea:
+player walks to convinience store, including some extra tasks at home to make first walk longer.
+player clocks in, restocks fridge
+boss calls player, telling him there is a special delivery out back and that he can reach it by going through the storage unit.
+player enters storage unit, flash level transition.
+
+level geometry: long, seemingly endless series of corridor-esk storage places with enemies pushing over stuff and fighting. not a lot of vertical space. 
+
+level ends by: player goes to bash "special entity" with weapon, flash transition to player slashing pen across shipping paper to finish his signature.
+
+day ends normally
+
+
+
+
+game ends with player quitting job and or boss shooting player in suprise twist (boss says he will give him a parting gift -> level transition -> boss is enemy shoots player :OOOOOOOOO what a twist give me oscar now)

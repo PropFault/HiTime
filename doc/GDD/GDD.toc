@@ -1,0 +1,70 @@
+\babel@toc {english}{}
+\contentsline {section}{\numberline {1}Overview}{5}{}%
+\contentsline {subsection}{\numberline {1.1}Mission Statement}{5}{}%
+\contentsline {subsection}{\numberline {1.2}Features}{5}{}%
+\contentsline {subsection}{\numberline {1.3}Genres / Tags}{5}{}%
+\contentsline {subsection}{\numberline {1.4}The "Ws"}{5}{}%
+\contentsline {subsubsection}{\numberline {1.4.1}What is it?}{5}{}%
+\contentsline {subsubsection}{\numberline {1.4.2}Where does it take place?}{5}{}%
+\contentsline {subsubsection}{\numberline {1.4.3}What am I controlling in the game?}{5}{}%
+\contentsline {subsubsection}{\numberline {1.4.4}What is the main goal?}{5}{}%
+\contentsline {subsubsection}{\numberline {1.4.5}What does the game focus on?}{5}{}%
+\contentsline {subsubsection}{\numberline {1.4.6}Why did you make it?}{6}{}%
+\contentsline {subsubsection}{\numberline {1.4.7}How is your game different to similar titles?}{6}{}%
+\contentsline {subsection}{\numberline {1.5}Principles}{6}{}%
+\contentsline {subsubsection}{\numberline {1.5.1}Goal \#1: Creativity with 3D-movement}{6}{}%
+\contentsline {subsubsection}{\numberline {1.5.2}Goal \#2: Distinct roles for each weapon}{6}{}%
+\contentsline {subsubsection}{\numberline {1.5.3}Goal \#3: Lorem ipsum}{6}{}%
+\contentsline {subsubsection}{\numberline {1.5.4}Target Audience}{6}{}%
+\contentsline {section}{\numberline {2}Storyline}{7}{}%
+\contentsline {subsection}{\numberline {2.1}Synopsis}{7}{}%
+\contentsline {subsection}{\numberline {2.2}Characters}{7}{}%
+\contentsline {subsubsection}{\numberline {2.2.1}Lorem Mc Ipsum}{7}{}%
+\contentsline {section}{\numberline {3}Gameplay}{8}{}%
+\contentsline {subsection}{\numberline {3.1}Core}{8}{}%
+\contentsline {subsubsection}{\numberline {3.1.1}Modes}{8}{}%
+\contentsline {subsection}{\numberline {3.2}Mechanics}{8}{}%
+\contentsline {subsubsection}{\numberline {3.2.1}Character Movement}{8}{}%
+\contentsline {subsubsection}{\numberline {3.2.2}Character World Interactions}{9}{}%
+\contentsline {subsubsection}{\numberline {3.2.3}Camera}{9}{}%
+\contentsline {subsection}{\numberline {3.3}POV}{9}{}%
+\contentsline {subsection}{\numberline {3.4}Objectives}{10}{}%
+\contentsline {subsubsection}{\numberline {3.4.1}Per Level}{10}{}%
+\contentsline {subsubsection}{\numberline {3.4.2}Overarching}{10}{}%
+\contentsline {subsection}{\numberline {3.5}Restrictions, Principles and Rules}{11}{}%
+\contentsline {subsubsection}{\numberline {3.5.1}Standardised \& Expected Controls for First-Person elements}{11}{}%
+\contentsline {subsubsection}{\numberline {3.5.2}Prop intractability}{11}{}%
+\contentsline {subsection}{\numberline {3.6}Mapping}{11}{}%
+\contentsline {subsubsection}{\numberline {3.6.1}Tomato Town}{11}{}%
+\contentsline {section}{\numberline {4}Aesthetics}{12}{}%
+\contentsline {subsection}{\numberline {4.1}Principles}{12}{}%
+\contentsline {subsubsection}{\numberline {4.1.1}Color palette}{12}{}%
+\contentsline {subsection}{\numberline {4.2}Lighting}{13}{}%
+\contentsline {subsection}{\numberline {4.3}Mapping}{13}{}%
+\contentsline {subsubsection}{\numberline {4.3.1}Rough, jagged geometry}{13}{}%
+\contentsline {subsubsection}{\numberline {4.3.2}Limited draw distance, fog}{13}{}%
+\contentsline {subsection}{\numberline {4.4}User Interface}{14}{}%
+\contentsline {subsubsection}{\numberline {4.4.1}Ingame-HUD}{14}{}%
+\contentsline {subsubsection}{\numberline {4.4.2}Main Menu}{14}{}%
+\contentsline {section}{\numberline {5}Technical Specifications}{15}{}%
+\contentsline {subsection}{\numberline {5.1}Supported Platforms}{15}{}%
+\contentsline {subsection}{\numberline {5.2}Game Engine}{15}{}%
+\contentsline {subsubsection}{\numberline {5.2.1}Requirements}{15}{}%
+\contentsline {paragraph}{Requirement 1}{15}{}%
+\contentsline {subparagraph}{Points}{15}{}%
+\contentsline {paragraph}{Requirement 2}{15}{}%
+\contentsline {subparagraph}{Points}{15}{}%
+\contentsline {paragraph}{Lorem ipsum}{15}{}%
+\contentsline {subparagraph}{Points}{15}{}%
+\contentsline {subsubsection}{\numberline {5.2.2}Variants}{15}{}%
+\contentsline {paragraph}{Fake Engine 01}{15}{}%
+\contentsline {paragraph}{Fake Engine the second}{16}{}%
+\contentsline {paragraph}{Third one}{16}{}%
+\contentsline {subsubsection}{\numberline {5.2.3}Analysis}{16}{}%
+\contentsline {paragraph}{Result}{16}{}%
+\contentsline {subsection}{\numberline {5.3}Rendering}{16}{}%
+\contentsline {subsubsection}{\numberline {5.3.1}2D in 3D}{16}{}%
+\contentsline {subsection}{\numberline {5.4}Control Scheme}{17}{}%
+\contentsline {subsubsection}{\numberline {5.4.1}Windows}{17}{}%
+\contentsline {section}{\numberline {6}Changelog}{17}{}%
+\contentsline {subsection}{\numberline {6.1}Version 1.0 - your title here}{17}{}%
