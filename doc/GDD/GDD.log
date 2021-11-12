@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.3.10)  29 MAR 2021 20:32
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.3.10)  4 JUN 2021 20:38
 entering extended mode
 **./GDD.tex
 (GDD.tex
@@ -252,95 +252,90 @@ Overfull \hbox (4.1574pt too wide) in paragraph at lines 44--45
 []\OT1/cmr/m/n/10 TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO
  []
 
-[5] [6]
-<images//chartest.jpg, id=29, 96.36pt x 96.36pt>
+[5] [6] [7]
+<images//chartest.jpg, id=34, 96.36pt x 96.36pt>
 File: images//chartest.jpg Graphic file (type jpg)
 <use images//chartest.jpg>
-Package pdftex.def Info: images//chartest.jpg  used on input line 111.
+Package pdftex.def Info: images//chartest.jpg  used on input line 114.
 (pdftex.def)             Requested size: 56.9055pt x 56.90482pt.
- [7 <./images//chartest.jpg>] [8] [9] [10]
-<images//map.png, id=45, 301.125pt x 301.125pt>
+ [8 <./images//chartest.jpg>] [9] [10]
+<images//map.png, id=44, 301.125pt x 301.125pt>
 File: images//map.png Graphic file (type png)
 <use images//map.png>
-Package pdftex.def Info: images//map.png  used on input line 209.
+Package pdftex.def Info: images//map.png  used on input line 212.
 (pdftex.def)             Requested size: 150.56212pt x 150.56212pt.
- [11 <./images//map.png>]
-<images//normal.png, id=49, 1606.0pt x 1204.5pt>
+ [11]
+<images//normal.png, id=48, 1606.0pt x 1204.5pt>
 File: images//normal.png Graphic file (type png)
 <use images//normal.png>
-Package pdftex.def Info: images//normal.png  used on input line 251.
+Package pdftex.def Info: images//normal.png  used on input line 254.
 (pdftex.def)             Requested size: 160.6094pt x 120.45705pt.
-<images//danger.png, id=51, 1606.0pt x 1204.5pt>
+<images//danger.png, id=50, 1606.0pt x 1204.5pt>
 File: images//danger.png Graphic file (type png)
 <use images//danger.png>
-Package pdftex.def Info: images//danger.png  used on input line 251.
+Package pdftex.def Info: images//danger.png  used on input line 254.
 (pdftex.def)             Requested size: 160.6094pt x 120.45705pt.
-<images//stealth.png, id=52, 1606.0pt x 1204.5pt>
+<images//stealth.png, id=51, 1606.0pt x 1204.5pt>
 File: images//stealth.png Graphic file (type png)
 <use images//stealth.png>
-Package pdftex.def Info: images//stealth.png  used on input line 253.
+Package pdftex.def Info: images//stealth.png  used on input line 256.
 (pdftex.def)             Requested size: 160.6094pt x 120.45705pt.
-<images//panic.png, id=53, 1606.0pt x 1204.5pt>
+<images//panic.png, id=52, 1606.0pt x 1204.5pt>
 File: images//panic.png Graphic file (type png)
 <use images//panic.png>
-Package pdftex.def Info: images//panic.png  used on input line 253.
+Package pdftex.def Info: images//panic.png  used on input line 256.
 (pdftex.def)             Requested size: 160.6094pt x 120.45705pt.
-<images//boss_l.png, id=54, 1606.0pt x 1204.5pt>
+<images//boss_l.png, id=53, 1606.0pt x 1204.5pt>
 File: images//boss_l.png Graphic file (type png)
 <use images//boss_l.png>
-Package pdftex.def Info: images//boss_l.png  used on input line 255.
+Package pdftex.def Info: images//boss_l.png  used on input line 258.
 (pdftex.def)             Requested size: 160.6094pt x 120.45705pt.
-<images//boss_w.png, id=55, 1606.0pt x 1204.5pt>
+<images//boss_w.png, id=54, 1606.0pt x 1204.5pt>
 File: images//boss_w.png Graphic file (type png)
 <use images//boss_w.png>
-Package pdftex.def Info: images//boss_w.png  used on input line 255.
+Package pdftex.def Info: images//boss_w.png  used on input line 258.
 (pdftex.def)             Requested size: 160.6094pt x 120.45705pt.
 
-Overfull \hbox (0.21884pt too wide) in paragraph at lines 246--259
+Overfull \hbox (0.21884pt too wide) in paragraph at lines 249--262
 [] 
  []
 
-[12]
-<images//mockup.png, id=59, 515.67656pt x 301.125pt>
+[12 <./images//map.png>] [13 <./images//normal.png> <./images//danger.png> <./i
+mages//stealth.png> <./images//panic.png> <./images//boss_l.png> <./images//bos
+s_w.png>]
+<images//mockup.png, id=68, 515.67656pt x 301.125pt>
 File: images//mockup.png Graphic file (type png)
 <use images//mockup.png>
-Package pdftex.def Info: images//mockup.png  used on input line 272.
+Package pdftex.def Info: images//mockup.png  used on input line 275.
 (pdftex.def)             Requested size: 344.99004pt x 201.45403pt.
- [13 <./images//normal.png> <./images//danger.png> <./images//stealth.png> <./i
-mages//panic.png> <./images//boss_l.png> <./images//boss_w.png>]
-<images//mockup_mainmenu.png, id=70, 515.67656pt x 301.125pt>
+<images//mockup_mainmenu.png, id=69, 515.67656pt x 301.125pt>
 File: images//mockup_mainmenu.png Graphic file (type png)
 <use images//mockup_mainmenu.png>
-Package pdftex.def Info: images//mockup_mainmenu.png  used on input line 275.
+Package pdftex.def Info: images//mockup_mainmenu.png  used on input line 278.
 (pdftex.def)             Requested size: 344.99004pt x 201.45403pt.
- [14 <./images//mockup.png> <./images//mockup_mainmenu.png>] [15] [16] [17] (GD
-D.aux)
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
- ) 
+ [14 <./images//mockup.png>] [15 <./images//mockup_mainmenu.png>]
+[16] [17] (GDD.aux) ) 
 Here is how much of TeX's memory you used:
- 3562 strings out of 479334
- 47847 string characters out of 2866948
- 363909 words of memory out of 3000000
- 20963 multiletter control sequences out of 15000+200000
- 413410 words of font info for 65 fonts, out of 3000000 for 9000
+ 3560 strings out of 479334
+ 47823 string characters out of 2866948
+ 363901 words of memory out of 3000000
+ 20962 multiletter control sequences out of 15000+200000
+ 413051 words of font info for 64 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 68i,11n,74p,1653b,401s stack positions out of 5000i,500n,10000p,200000b,50000s
- <C:\Users\Moustache\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\
-tcrm1000.pk><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb>
-<C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program 
-Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx9.pfb><C:/Program Files/MiKTeX/
-fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Program Files/MiKTeX/fonts/type
-1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsf
-onts/cm/cmr12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17
-.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Progr
-am Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsl10.pfb><C:/Program Files/MiK
-TeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/Moustache/AppData/Roami
-ng/MiKTeX/fonts/type1/public/eurosym/feymr10.pfb>
-Output written on GDD.pdf (17 pages, 457799 bytes).
+ 68i,11n,74p,1653b,362s stack positions out of 5000i,500n,10000p,200000b,50000s
+ <C:\Users\Moustache\AppData\Local\MiKTeX\fonts/pk/ljfour/
+jknappen/ec/dpi600\tcrm1000.pk><C:/Program Files/MiKTeX/fonts/type1/public/amsf
+onts/cm/cmbx10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx
+12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx9.pfb><C:/Pr
+ogram Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/M
+iKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX/fonts/t
+ype1/public/amsfonts/cm/cmr17.pfb><C:/Program Files/MiKTeX/fonts/type1/public/a
+msfonts/cm/cmr9.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cms
+l10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/
+Users/Moustache/AppData/Roaming/MiKTeX/fonts/type1/public/eurosym/feymr10.pfb>
+Output written on GDD.pdf (17 pages, 450589 bytes).
 PDF statistics:
- 123 PDF objects out of 1000 (max. 8388607)
+ 119 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  51 words of extra memory for PDF output out of 10000 (max. 10000000)
 
