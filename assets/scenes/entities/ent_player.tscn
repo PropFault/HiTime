@@ -90,5 +90,6 @@ _raycast = NodePath("../../RayCast")
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0 )
 enabled = true
 collide_with_areas = true
+
 [connection signal="velocityChanged" from="." to="IdleState" method="sigVelocityChanged"]
 [connection signal="velocityChanged" from="." to="MoveState" method="sigVelocityChanged"]

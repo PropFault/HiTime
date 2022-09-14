@@ -8,7 +8,7 @@
 [ext_resource path="res://assets/scripts/tool/weapons/AmmoManager.gd" type="Script" id=6]
 [ext_resource path="res://assets/scripts/StateManager.gd" type="Script" id=7]
 [ext_resource path="res://assets/scripts/tool/Tool.gd" type="Script" id=8]
-[ext_resource path="res://assets/spray_patterns/test_pattern.png" type="Texture" id=9]
+[ext_resource path="res://icon.png" type="Texture" id=9]
 [ext_resource path="res://assets/scripts/tool/weapons/states/WepFireHitscanState.gd" type="Script" id=10]
 [ext_resource path="res://assets/scripts/tool/weapons/states/WepReloadClipState.gd" type="Script" id=11]
 
